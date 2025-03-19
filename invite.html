@@ -3,79 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свадебное приглашение</title>
+    <title>Приглашение на свадьбу</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
         body {
-            text-align: center;
-            background: url('https://source.unsplash.com/1600x900/?wedding') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/1600x900/?dark-leaves') no-repeat center center/cover;
             color: white;
-            font-family: 'Great Vibes', cursive;
-            padding: 50px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            padding: 20px;
         }
 
         .container {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
             display: inline-block;
+            width: 80%;
+            max-width: 500px;
         }
 
         h1 {
+            font-family: 'Great Vibes', cursive;
             font-size: 50px;
+            margin-bottom: 10px;
         }
 
         p {
             font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .countdown {
+            font-size: 30px;
+            margin-top: 20px;
         }
 
         .btn {
-            background: #ffd700;
-            color: black;
+            display: inline-block;
+            margin-top: 20px;
             padding: 15px 25px;
+            background: gold;
+            color: black;
             text-decoration: none;
             font-size: 20px;
             border-radius: 10px;
-            display: inline-block;
-            margin-top: 20px;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: #ffcc00;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animated {
-            animation: fadeIn 2s ease-out;
+            background: #e6c200;
         }
     </style>
 </head>
 <body>
 
-    <div class="container animated">
-        <h1>Приглашение на свадьбу</h1>
-        <p>Дорогой(ая) <span id="guestName">гость</span>,</p>
-        <p>Мы приглашаем тебя на нашу свадьбу, которая состоится <br><b>12 июля 2025 года</b> в <b>Санкт-Петербурге</b>.</p>
-        <p>Будем рады видеть тебя на нашем празднике любви!</p>
+    <div class="container">
+        <h1>Александр & Элеонора</h1>
+        <p>Приглашаем вас на нашу свадьбу</p>
+        <p><b>Дата:</b> 13 июня 2025 года</p>
+        <p><b>Место:</b> Санкт-Петербург</p>
 
-        <a href="https://forms.gle/YOUR-GOOGLE-FORM" class="btn">Подтвердить участие</a>
+        <div class="countdown" id="countdown">Загрузка таймера...</div>
+
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Свадьба+Александра+и+Элеоноры&dates=20250613T150000Z/20250613T180000Z&details=Приглашаем+вас+на+нашу+свадьбу!" class="btn">
+            Добавить в календарь
+        </a>
     </div>
 
     <script>
-        // Получаем имя гостя из URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestName = urlParams.get('name');
+        function updateCountdown() {
+            const weddingDate = new Date("June 13, 2025 15:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
 
-        if (guestName) {
-            document.getElementById('guestName').textContent = guestName;
-        }
-    </script>
+            const weeks = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 7));
+            const days = Math.floor((timeLeft % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 
-</body>
-</html>
+            document.getElementById("countdown").innerHTML = `${weeks} недель ${days} дней
