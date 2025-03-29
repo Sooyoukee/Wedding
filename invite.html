@@ -4,12 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Свадебное приглашение</title>
-
-  <!-- Подключение Google-шрифта Montserrat (на всякий случай) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-
   <style>
-    /* Подключаем локальные шрифты */
     @font-face {
       font-family: 'Montserrat';
       src: url('fonts/Montserrat.ttf') format('truetype');
@@ -26,6 +21,9 @@
 
     /* Классы шрифтов */
     .font-montserrat {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+    .font-mark {
       font-family: 'Montserrat', sans-serif !important;
     }
 
@@ -103,21 +101,14 @@
 </head>
 <body>
   <div class="container">
-    <!-- Заголовок в Montserrat -->
     <h1 class="font-montserrat">Александр & Элеонора</h1>
-
-    <!-- Всё остальное в Mark (по умолчанию) -->
     <p class="date">13 июня 2025 года</p>
     <p>Приглашаем вас на нашу свадьбу!</p>
     <p class="countdown" id="countdown"></p>
-
     <a href="https://calendar.google.com" class="btn">Добавить в календарь</a>
-
     <h2>Место проведения</h2>
     <p>Ресторан NORDEN, Курск, Дубовая улица, 1, деревня Татаренкова, Нижнемедведицкий сельсовет, Курский район</p>
-
     <iframe src="https://yandex.ru/map-widget/v1/?ll=36.162016%2C51.821980&z=18.58&mode=search&text=NORDEN" allowfullscreen></iframe>
-
     <h2>Подтвердите присутствие</h2>
     <p>Просим подтвердить ваше присутствие до 1 февраля 2025 года.</p>
     <a href="https://forms.gle/YOUR-GOOGLE-FORM" class="btn">Подтвердить</a>
