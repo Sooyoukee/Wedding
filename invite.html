@@ -1,129 +1,152 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свадебное приглашение</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-         @font-face {
-            font-family: 'Montserrat';
-            src: url('fonts/Montserrat.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-         @font-face {
-            font-family: 'Mark';
-            src: url('fonts/Mark.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        .font-mark {
-        font-family: 'Mark', sans-serif !important;
-        }
-        .font-montserrat {
-        font-family: 'Montserrat', sans-serif !important;
-        }
-        body {
-            margin: 0;
-            font-family: 'Mark', sans-serif;
-            background: url('botanical-sage-green-wallpaper-1273882445346897993.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px;
-            display: inline-block;
-            max-width: 90%;
-        }
-        h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-        .date {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .countdown {
-            font-size: 20px;
-            margin: 10px 0;
-        }
-        .btn {
-            background: gold;
-            color: black;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background: darkgoldenrod;
-        }
-        iframe {
-            width: 100%;
-            height: 300px;
-            border: 0;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-        .color-palette {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 15px;
-        }
-        .color {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Свадебное приглашение</title>
+
+  <!-- Подключение Google-шрифта Montserrat (на всякий случай) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Подключаем локальные шрифты */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('fonts/Montserrat.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Mark';
+      src: url('fonts/Mark.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Классы шрифтов */
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+
+    /* Глобальные стили */
+    body {
+      margin: 0;
+      font-family: 'Mark', sans-serif;
+      background: url('botanical-sage-green-wallpaper-1273882445346897993.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px;
+      display: inline-block;
+      max-width: 90%;
+    }
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .countdown {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background: gold;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: darkgoldenrod;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .color-palette {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    .color {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="font-montserrat">Александр & Элеонора</h1>
-        <p class="date">13 июня 2025 года</p>
-        <p>Приглашаем вас на нашу свадьбу!</p>
-        <p class="countdown" id="countdown"></p>
-        <a href="https://calendar.google.com" class="btn">Добавить в календарь</a>
-        <h2>Место проведения</h2>
-        <p>Ресторан NORDEN, Курск, Дубовая улица, 1, деревня Татаренкова, Нижнемедведицкий сельсовет, Курский район</p>
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=36.162016%2C51.821980&z=18.58&mode=search&text=NORDEN" allowfullscreen></iframe>
-        <h2>Подтвердите присутствие</h2>
-        <p>Просим подтвердить ваше присутствие до 1 февраля 2025 года.</p>
-        <a href="https://forms.gle/YOUR-GOOGLE-FORM" class="btn">Подтвердить</a>
-        
-        <h2>Цветовая палитра праздника</h2>
-        <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры:</p>
-        <div class="color-palette">
-            <div class="color" style="background: #2F5D32;"></div>
-            <div class="color" style="background: #A5D179;"></div>
-            <div class="color" style="background: #4B3B30;"></div>
-            <div class="color" style="background: #F6E4C2;"></div>
-            <div class="color" style="background: #000000;"></div>
-        </div>
-    </div>
+  <div class="container">
+    <!-- Заголовок в Montserrat -->
+    <h1 class="font-montserrat">Александр & Элеонора</h1>
 
-    <script>
-        function updateCountdown() {
-            const weddingDate = new Date("June 13, 2025 17:00:00").getTime();
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
-            const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
-            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("countdown").innerHTML = `${weeks} недель ${days} дней ${hours} часов ${minutes} минут`;
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+    <!-- Всё остальное в Mark (по умолчанию) -->
+    <p class="date">13 июня 2025 года</p>
+    <p>Приглашаем вас на нашу свадьбу!</p>
+    <p class="countdown" id="countdown"></p>
+
+    <a href="https://calendar.google.com" class="btn">Добавить в календарь</a>
+
+    <h2>Место проведения</h2>
+    <p>Ресторан NORDEN, Курск, Дубовая улица, 1, деревня Татаренкова, Нижнемедведицкий сельсовет, Курский район</p>
+
+    <iframe src="https://yandex.ru/map-widget/v1/?ll=36.162016%2C51.821980&z=18.58&mode=search&text=NORDEN" allowfullscreen></iframe>
+
+    <h2>Подтвердите присутствие</h2>
+    <p>Просим подтвердить ваше присутствие до 1 февраля 2025 года.</p>
+    <a href="https://forms.gle/YOUR-GOOGLE-FORM" class="btn">Подтвердить</a>
+
+    <h2>Цветовая палитра праздника</h2>
+    <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры:</p>
+    <div class="color-palette">
+      <div class="color" style="background: #2F5D32;"></div>
+      <div class="color" style="background: #A5D179;"></div>
+      <div class="color" style="background: #4B3B30;"></div>
+      <div class="color" style="background: #F6E4C2;"></div>
+      <div class="color" style="background: #000000;"></div>
+    </div>
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const weddingDate = new Date("June 13, 2025 17:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+      const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+      const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("countdown").innerHTML = `${weeks} недель ${days} дней ${hours} часов ${minutes} минут`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
