@@ -156,11 +156,6 @@ fetch('guests.json')
     console.error("Ошибка загрузки guests.json:", error);
   });
 
-    if (name) {
-      document.getElementById("greeting-text").textContent =
-        `Дорогие ${name}, приглашаем вас на нашу свадьбу!`;
-    }
-
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
