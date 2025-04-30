@@ -139,9 +139,9 @@
     }
 
    const params = new URLSearchParams(window.location.search);
-const code = params.get("code");
+   const code = params.get("code");
 
-fetch('guests.json')
+  fetch('guests.json')
   .then(response => response.json())
   .then(guestMap => {
     const name = guestMap[code];
