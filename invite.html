@@ -19,15 +19,10 @@
       font-style: normal;
     }
 
-    /* Классы шрифтов */
     .font-montserrat {
       font-family: 'Montserrat', sans-serif !important;
     }
-    .font-mark {
-      font-family: 'Montserrat', sans-serif !important;
-    }
 
-    /* Глобальные стили */
     body {
       margin: 0;
       font-family: 'Mark', sans-serif;
@@ -103,14 +98,21 @@
   <div class="container">
     <h1 class="font-montserrat">Александр & Элеонора</h1>
     <p class="date">13 июня 2025 года</p>
-    <p>Приглашаем вас на нашу свадьбу!</p>
+
+    <!-- Персонализированное приветствие -->
+    <p id="greeting-text">Приглашаем вас на нашу свадьбу!</p>
+
     <p class="countdown" id="countdown"></p>
-    
-    <a href="https://calendar.google.com" class="btn">Добавить в календарь(Google)</a>
-    <a href="https://calendar.yandex.ru" class="btn">Добавить в календарь(Яндекс)</a>
+
+    <!-- Кнопки календаря -->
+    <a class="btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Свадьба+Александр+и+Элеонора&dates=20250613T140000Z/20250613T180000Z&location=NORDEN,+Курск&details=Будем+рады+вас+видеть!">Добавить в календарь (Google)</a>
+
+    <a class="btn" href="mailto:?subject=Свадьба+Александр+и+Элеонора&body=Добавьте+это+событие:+13+июня+2025+в+17:00+в+NORDEN,+Курск">Добавить в календарь (Яндекс)</a>
+
     <h2>Место проведения</h2>
     <p>Ресторан NORDEN, Курск, Дубовая улица, 1, деревня Татаренкова, Нижнемедведицкий сельсовет, Курский район</p>
     <iframe src="https://yandex.ru/map-widget/v1/?ll=36.162016%2C51.821980&z=18.58&mode=search&text=NORDEN" allowfullscreen></iframe>
+
     <h2>Подтвердите присутствие</h2>
     <p>Просим подтвердить ваше присутствие до 1 февраля 2025 года.</p>
     <a href="https://forms.gle/YOUR-GOOGLE-FORM" class="btn">Подтвердить</a>
@@ -136,6 +138,27 @@
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       document.getElementById("countdown").innerHTML = `${weeks} недель ${days} дней ${hours} часов ${minutes} минут`;
+    }
+
+   const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+
+fetch('guests.json')
+  .then(response => response.json())
+  .then(guestMap => {
+    const name = guestMap[code];
+    if (name) {
+      document.getElementById("greeting-text").textContent =
+        `Дорогие ${name}, приглашаем вас на нашу свадьбу!`;
+    }
+  })
+  .catch(error => {
+    console.error("Ошибка загрузки guests.json:", error);
+  });
+
+    if (name) {
+      document.getElementById("greeting-text").textContent =
+        `Дорогие ${name}, приглашаем вас на нашу свадьбу!`;
     }
 
     setInterval(updateCountdown, 1000);
