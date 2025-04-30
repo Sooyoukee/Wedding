@@ -4,71 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Свадебное приглашение</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Montserrat';
-      src: url('fonts/Montserrat.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'Mark';
-      src: url('fonts/Mark.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    .font-montserrat {
-      font-family: 'Montserrat', sans-serif !important;
-    }
-
     body {
       margin: 0;
-      font-family: 'Mark', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: url('botanical-sage-green-wallpaper-1273882445346897993.jpg') no-repeat center center/cover;
-      color: white;
+      color: #2f2f2f;
       text-align: center;
     }
 
     .container {
-      background: rgba(0, 0, 0, 0.6);
+      background: #fff;
       padding: 30px;
       border-radius: 10px;
-      margin: 20px;
+      margin: 20px auto;
       display: inline-block;
-      max-width: 90%;
+      max-width: 650px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
-      font-size: 25px;
-      margin-bottom: 10px;
+    h1, #greeting-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 34px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      color: #2a2a2a;
+    }
+
+    .greeting-sub {
+      font-size: 20px;
+      font-weight: 300;
+      margin: 20px 0 30px;
     }
 
     .date {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .countdown {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .btn {
-      background: gold;
-      color: black;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 5px;
-      display: inline-block;
+      font-size: 28px;
+      font-weight: 400;
       margin-top: 20px;
     }
 
+    .location {
+      font-size: 18px;
+      font-weight: 400;
+      margin-top: 5px;
+      line-height: 1.6;
+    }
+
+    .time {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 10px 0 30px;
+    }
+
+    .countdown {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .btn {
+      background: #2f5d32;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
     .btn:hover {
-      background: darkgoldenrod;
+      background: #234625;
     }
 
     iframe {
@@ -90,42 +98,49 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 2px solid #ccc;
+    }
+
+    .footer-signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      margin-top: 40px;
+      border-top: 1px solid #aaa;
+      padding-top: 15px;
+      color: #2f5d32;
     }
   </style>
 </head>
 <body>
   <div class="container">
-
-     <!-- Персонализированное приветствие -->
-    <h1 id="greeting-text">Приглашаем вас на нашу свадьбу!</h1>
-
-    <p class="font-montserrat">_____________________</p>
-    <p class="font-montserrat">Александр & Элеонора</p>    
-    <p class="date">13 июня 2025 года</p>   
+    <h1 id="greeting-text">ДОРОГИЕ ГОСТИ!</h1>
+    <p class="greeting-sub">Мы с огромной радостью приглашаем вас<br>на нашу свадьбу!</p>
     
+    <p class="date">13.06.2025</p>
+    <p class="location">Ресторан NORDEN<br>д. Татаренково, ул. Дубовая, д.1</p>
+    <p class="time">В 16:00</p>
+
     <p class="countdown" id="countdown"></p>
 
-    <!-- Кнопки календаря -->
-    <a class="btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Свадьба+Александр+и+Элеонора&dates=20250613T140000Z/20250613T180000Z&location=NORDEN,+Курск&details=Будем+рады+вас+видеть!">Добавить в календарь (Google)</a>
-
-    <h2>Место проведения</h2>
-    <p>Ресторан NORDEN, Курск, Дубовая улица, 1, деревня Татаренкова, Нижнемедведицкий сельсовет, Курский район</p>
-    <iframe src="https://yandex.ru/map-widget/v1/?ll=36.162016%2C51.821980&z=18.58&mode=search&text=NORDEN" allowfullscreen></iframe>
+    <a class="btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Свадьба+Александр+и+Элеонора&dates=20250613T140000Z/20250613T180000Z&location=NORDEN,+Курск&details=Будем+рады+вас+видеть!">
+      Добавить в календарь
+    </a>
 
     <h2>Подтвердите присутствие</h2>
     <p>Просим подтвердить ваше присутствие до 1 февраля 2025 года.</p>
     <a href="https://forms.gle/YOUR-GOOGLE-FORM" class="btn">Подтвердить</a>
 
     <h2>Цветовая палитра праздника</h2>
-    <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры:</p>
+    <p>Будем признательны, если вы поддержите цветовую гамму:</p>
     <div class="color-palette">
-      <div class="color" style="background: #2F5D32;"></div>
-      <div class="color" style="background: #A5D179;"></div>
-      <div class="color" style="background: #4B3B30;"></div>
-      <div class="color" style="background: #F6E4C2;"></div>
-      <div class="color" style="background: #000000;"></div>
+      <div class="color" style="background: #7A9A5C;"></div>
+      <div class="color" style="background: #3C4A30;"></div>
+      <div class="color" style="background: #1B1B1B;"></div>
+      <div class="color" style="background: #5E4732;"></div>
+      <div class="color" style="background: #E3D7B6;"></div>
     </div>
+
+    <div class="footer-signature">Александр & Элеонора</div>
   </div>
 
   <script>
@@ -137,24 +152,21 @@
       const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      document.getElementById("countdown").innerHTML = `${weeks} недель ${days} дней ${hours} часов ${minutes} минут`;
+      document.getElementById("countdown").textContent =
+        `${weeks} недель ${days} дней ${hours} часов ${minutes} минут`;
     }
 
-   const params = new URLSearchParams(window.location.search);
-   const code = params.get("code");
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
 
-  fetch('guests.json')
-  .then(response => response.json())
-  .then(guestMap => {
-    const name = guestMap[code];
-    if (name) {
-      document.getElementById("greeting-text").textContent =
-        `${name}, мы с огромной радостью приглашаем вас на нашу свадьбу!`;
-    }
-  })
-  .catch(error => {
-    console.error("Ошибка загрузки guests.json:", error);
-  });
+    fetch('guests.json')
+      .then(response => response.json())
+      .then(guestMap => {
+        const name = guestMap[code];
+        if (name) {
+          document.getElementById("greeting-text").textContent = `ДОРОГИЕ ${name.toUpperCase()}!`;
+        }
+      });
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
